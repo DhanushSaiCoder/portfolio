@@ -1,0 +1,307 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #E4FFFF;
+    background-color: #003049;
+}
+
+.profileHalf {
+    width: 100vw;
+    height: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: no-wrap;
+    background: url('profileBg.png');
+    background-size: cover;
+    background-position: center;
+    padding: 5px 20px;
+}
+
+.verticalTextL, .verticalTextR {
+    width: 20%;
+    height: 100%;
+    border: 1px solid red;
+}
+
+.verticalTextL {
+    background: url("LBg.png");
+    background-size: cover;
+    background-position: center;
+    border: none;
+}
+
+.verticalTextR {
+    background: url("RBg.png");
+    background-size: cover;
+    background-position: center;
+    border: none;
+}
+
+.profileDiv {
+    width: 79%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+#profile {
+    width: 240px;
+    height: 240px;
+    border-radius: 120px;
+}
+
+#name {
+    font-weight: 700;
+    margin-bottom: -15px;
+}
+
+#bio {
+    font-size: 10px;
+    color: #8DFFFF;
+    font-weight: 450;
+}
+
+.blueBtn, .greyBtn {
+    background-color: rgba(0, 255, 255, 1);
+    width: 130px;
+    height: 40px;
+    border: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 17px;
+    transition: background-color 0.5s, color 0.35s; /* Smooth transition for buttons */
+}
+
+.greyBtn {
+    background-color: rgba(227, 255, 255, 0.2);
+    color: #E4FFFF;
+}
+
+#contactBtn {
+    margin-top: 30px;
+}
+
+#profile {
+    margin-top: 30px;
+    margin-bottom: -40px;
+}
+
+.profileDiv {
+    padding-bottom: 20px;
+}
+
+.blueBtn {
+    transition: background-color 0.4s, color 0.4s; /* Transition for hover effect */
+}
+
+.blueBtn:hover {
+    background-color: rgba(46, 255, 255, 1);
+    color: black;
+    border-bottom: 3.5px solid #E4FFFF;
+    height: 43.5px;
+}
+
+.sectionsBtnsDiv {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 20px 20px;
+    background-size: cover;
+    background-position: center;
+    position: sticky;
+    top: 0;
+    z-index: 10; /* Ensure it stays on top */
+}
+
+.sectionsBtns {
+    padding: 0px 10px;
+    width: auto;
+    height: 30px;
+    margin: none;
+    transition: background-color 0.5s, color 0.35s; /* Add transition effect */
+}
+
+.active {
+    background-color: rgba(0, 255, 255, 1);
+    color: #0C1f1F;
+}
+
+.dataDiv {
+    width: 100vw;
+    height: auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    flex-wrap: wrap;
+    opacity: 0; /* Start with hidden content */
+    transition: opacity 0.25s ease-in-out; /* Smooth transition for opacity */
+}
+
+.dataDiv.visible {
+    opacity: 1; /* Show content */
+}
+
+.card {
+    width: 95%;
+    height: 250px;
+    background-color: rgba(227, 255, 255, 0.2);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    opacity: 0; /* Initially hide the cards */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for card opacity */
+}
+
+.card.animate {
+    animation: slideUp 0.5s ease-in-out forwards;
+}
+
+.card:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* Define the animation */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footerDiv {
+    width: 100vw;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 30px;
+    color: rgba(0, 255, 255, 1);
+}
+
+.footerDiv h4 {
+    font-weight: 300;
+    opacity: 0.3247;
+}
+
+#demo {
+    background-size: cover;
+    background-position: center;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.card p {
+    opacity: 0.5;
+    font-size: small;
+}
+
+.shadowDiv {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    padding: 10px 15px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;  
+    flex-direction: column;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(8, 25, 28, 0) 0%, rgba(16, 4, 4, 0.87196365011499284) 100%);
+}
+
+.shadowDiv h3 {
+    font-size: 21px;
+}
+
+.ratingDiv {
+    padding: 0;
+    width: 73px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ratingImg {
+    padding: 0;
+    margin-left: 10px;
+    height: 50px;
+    width: auto;
+}
+
+.shadowDiv div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bgImg {
+    width: 100%;
+    height: 100%;
+    z-index: -4;
+}
+.card {
+    width: 95%;
+    height: 250px;
+    background-color: rgba(227, 255, 255, 0.2);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    opacity: 0; /* Initially hide the cards */
+}
+
+.card.exclude-animation {
+    opacity: 1;
+}
+.footerDiv{
+  height: auto;
+  
+  bottom:0;
+  padding: 10px 10px;
+  background-color: #001E20;
+}
+.footerDiv h4{
+  color: #f1faff;
+  opacity: .9;
+}
+#profileBtn{
+  background: none;
+  border: none;
+}
