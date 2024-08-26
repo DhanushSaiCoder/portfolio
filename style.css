@@ -75,6 +75,7 @@ body {
     font-weight: 450;
 }
 
+
 .blueBtn, .greyBtn {
     background-color: rgba(0, 255, 255, 1);
     width: 130px;
@@ -117,12 +118,12 @@ body {
     padding-top: 20px;
     padding-bottom: 10px;
     width: 100vw;
-    height: 80px;
+    height: auto;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
-    padding: 20px 15px;
+    padding: 20px 10px;
     background-size: cover;
     background-position: center;
     position: sticky;
@@ -403,3 +404,9 @@ body {
     opacity: 0; /* Initially hidden */
     transition: opacity 0.3s ease-in-out;
 }
+.greyBtn{
+  margin:10px;
+  margin-top: none;
+  margin-bottom:10px;
+  
+        }
