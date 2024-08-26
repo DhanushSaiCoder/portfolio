@@ -90,7 +90,7 @@ var about = [
         heading: 'About Me',
         text: 'I am a passionate web developer with a focus on creating user-friendly, visually appealing websites. Currently pursuing a diploma in Computer Engineering, I have honed my skills in various programming languages and web technologies. My journey in tech started with a curiosity about how things work behind the scenes on the web, and this has driven me to continuously learn and improve.'
     },{
-      text:`With a solid foundation in web development, I've worked on several projects, including [<a href="https://codepen.42web.io">Codepen Clone</a>, <a href="https://flames.42web.io/">Flames Online</a>, <a href="http://myexpenses.infinityfreeapp.com/">MyExpenses</a>]. I specialize in front-end development but have a strong interest in back-end processes as well, making me a well-rounded developer capable of tackling diverse challenges.`
+      text:`With a solid foundation in web development, I've worked on several projects, including [<a href="https://dhanushsaicoder.github.io/CodePen/">Codepen Clone</a>, <a href="https://dhanushsaicoder.github.io/flames/">Flames Online</a>, <a href="https://dhanushsaicoder.github.io/Expense-Tracker-Project/">MyExpenses</a>]. I specialize in front-end development but have a strong interest in back-end processes as well, making me a well-rounded developer capable of tackling diverse challenges.`
       
     },{
       text:"When I'm not coding, I engage in exploring emerging technologies, studying Sanatan texts, playing cricket, drawing, learning about rocket science, and expanding my expertise in multimedia and design.<br><br>"
