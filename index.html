@@ -1,55 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  
     <link rel="icon" href="profileIcon.png" type="image/icon type">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">    
-    <script src="main.js"></script>
-   
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b316a242c7.js" crossorigin="anonymous"></script>
     <title>DhanushSai</title>
 </head>
+
 <body>
+    <!-- Profile Section -->
     <div class="profileHalf">
-        <div class="verticalTextL">
-            
-        </div>
+        <div class="verticalTextL"></div>
         <div class="profileDiv">
-            <img id="profile" src="profile.png" alt="profile.jpg">
-            <h1 id="name">Dhanush Sai</h1>            
+            <img id="profile" src="profile.png" alt="Profile Picture">
+            <h1 id="name">Dhanush Sai</h1>
             <p id="bio">17yrs • Web Developer • India</p>
-            <button id="contactBtn" class="blueBtn">Contact</button>
-           
+            <button id="contactBtn" class="blueBtn" onclick="contact()">Contact</button>
         </div>
-        <div class="verticalTextR">
-            
-        </div>
-        
+        <div class="verticalTextR"></div>
     </div>
-    <div class="contentDiv">
+
+    <!-- Contact Section -->
+    <div id="contactDiv" style="display: none;">
+        <div id="contactHeadDiv">
+            <button onclick="content()"><i class="fa-solid fa-arrow-left"></i></button>
+            <h2>Contact Me</h2>
+        </div>
+        <div id="contactBodyDiv">
+            <div id="instagram">
+                <i class="fa-brands fa-instagram"></i>
+                <p>dhanushsaieditz</p>
+            </div>
+            <div id="github">
+                <i class="fa-brands fa-github"></i>
+                <p>DhanushSaiCoder</p>
+            </div>
+            <div id="youtube">
+                <i class="fa-brands fa-youtube"></i>
+                <p>dhanushsaieditz</p>
+            </div>
+            <div id="mail">
+                <i class="fa-regular fa-envelope"></i>
+                <p>dhanushsai1467@gmail.com</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div id="contentDiv" class="contentDiv">
         <div class="sectionsBtnsDiv">
             <button onclick="show(1)" id="skillsBtn" class="greyBtn sectionsBtns active">Skills</button>
-
-            <button onclick="show(2)"  id="projectsBtn" class="greyBtn sectionsBtns">Projects</button>
-            
-          
+            <button onclick="show(2)" id="projectsBtn" class="greyBtn sectionsBtns">Projects</button>
             <button onclick="show(3)" id="AMeBtn" class="greyBtn sectionsBtns">About Me</button>
-            
-            
-            
             <button onclick="show(4)" id="eduBtn" class="greyBtn sectionsBtns">Education</button>
         </div>
-        <div class="dataDiv" id="dataDiv">
-            
+        <div class="dataDiv" id="dataDiv"></div>
     </div>
+
+    <!-- Footer Section -->
     <div class="footerDiv">
-        <h4>©dhanushSai</h4>
+        <h4><i>© Dhanush Sai</i></h4>
     </div>
-    
+
+    <!-- JavaScript -->
+    <script src="main.js" defer></script>
 </body>
+
 </html>
