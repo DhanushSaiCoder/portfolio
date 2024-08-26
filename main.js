@@ -65,21 +65,21 @@ let skillsData = [
 
 var projects = [
   {
-    url:'http://myexpenses.infinityfreeapp.com/?i=1',
+    url:'https://dhanushsaicoder.github.io/Expense-Tracker-Project/',
     heading:'Expense Tracker',
     bg:'expense.jpg',
     techStack:['HTML','CSS','JavaScript'],
   },
   {
     bg:'codepen.jpg',
-    url:'https://codepen.42web.io/',
+    url:'https://dhanushsaicoder.github.io/CodePen/',
     heading:'Codepen Clone',
     techStack:['HTML','CSS','JavaScript']
   },
   {
     bg:'flames.jpg',
   
-    url:'https://flames.42web.io/?i=1',
+    url:'https://dhanushsaicoder.github.io/flames/',
     heading:'Flames Game',
     techStack:['HTML','CSS','JavaScript']
   }
