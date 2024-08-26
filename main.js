@@ -63,13 +63,53 @@ let skillsData = [
     }
 ];
 
-var projects = [];
-var about = [];
-var education = [];
+var projects = [
+  {
+    url:'http://myexpenses.infinityfreeapp.com/?i=1',
+    heading:'Expense Tracker',
+    bg:'expense.jpg',
+    techStack:['HTML','CSS','JavaScript'],
+  },
+  {
+    bg:'codepen.jpg',
+    url:'https://codepen.42web.io/',
+    heading:'Codepen Clone',
+    techStack:['HTML','CSS','JavaScript']
+  },
+  {
+    bg:'flames.jpg',
+  
+    url:'https://flames.42web.io/?i=1',
+    heading:'Flames Game',
+    techStack:['HTML','CSS','JavaScript']
+  }
+];
+
+var about = [
+    {
+        heading: 'About Me',
+        text: 'I am a passionate web developer with a focus on creating user-friendly, visually appealing websites. Currently pursuing a diploma in Computer Engineering, I have honed my skills in various programming languages and web technologies. My journey in tech started with a curiosity about how things work behind the scenes on the web, and this has driven me to continuously learn and improve.'
+    },{
+      text:`With a solid foundation in web development, I've worked on several projects, including [<a href="https://codepen.42web.io">Codepen Clone</a>, <a href="https://flames.42web.io/">Flames Online</a>, <a href="http://myexpenses.infinityfreeapp.com/">MyExpenses</a>]. I specialize in front-end development but have a strong interest in back-end processes as well, making me a well-rounded developer capable of tackling diverse challenges.`
+      
+    },{
+      text:"When I'm not coding, I engage in exploring emerging technologies, studying Sanatan texts, playing cricket, drawing, learning about rocket science, and expanding my expertise in multimedia and design.<br><br>"
+    }
+];
+
+var education = [
+    {
+        heading: 'Diploma in Computer Engineering',
+        institution: 'Andhra Polytechnic',
+        year: '2023 - Present',
+        description: 'Currently pursuing a diploma in Computer Engineering with a focus on Frontend Development. The curriculum has provided me with in-depth knowledge of web technologies, programming languages, and design principles.'
+    }
+];
 
 function show(i) {
     let arr = [];
     let heading = '';
+    let isSkillsSection = false;
 
     // Remove 'active' class from all buttons
     document.getElementById('skillsBtn').classList.remove('active');
@@ -80,6 +120,7 @@ function show(i) {
     if (i === 1) {
         arr = skillsData;
         heading = 'Skills';
+        isSkillsSection = true;
         document.getElementById('skillsBtn').classList.add('active');
     } else if (i === 2) {
         arr = projects;
@@ -103,40 +144,57 @@ function show(i) {
     setTimeout(() => {
         // Update the content
         let innerHtml = `<h1 id="sectionNameTxt">${heading}</h1>`;
+
         for (let j = 0; j < arr.length; j++) {
             let html = '';
-            if (j === 0) {
+
+            if (isSkillsSection) {
+                // Display content in card format for Skills section
                 html = `
-                    <div id="demo${j}" class="card exclude-animation" style="background-image: url(${arr[j].bg});
+                    <div id="demo${j}" class="card ${j === 0 ? 'exclude-animation' : ''}" style="background-image: url(${arr[j].bg});
+                      background-size: cover;
+                      background-position: center;
+                    ">
+                    </div>
+                    <div class="info card ${j === 0 ? 'exclude-animation' : ''}">
+                      <h3 class="heading">${arr[j].heading}</h3>
+                      <div class="ratingDivOut">
+                          <p>Skill Rating</p>     
+                          <div class="ratingDiv">
+                              <img class="ratingImg" src="${arr[j].rating}">
+                          </div>
+                      </div>
+                    </div>
+                `;
+            } else if (i === 2) {
+                // Display content in a different format for other sections
+                html = `
+                    <div id="demo${j}" class="card procard ${j === 0 ? 'exclude-animation' : ''}" style="background-image: url(${arr[j].bg});
                       background-size: cover;
                       background-position: center;
                     ">
                       <div class="shadowDiv">
-                            <h3>${arr[j].heading}</h3>
-                            <div>
-                                <p>Skill Rating</p>     
-                                <div class="ratingDiv">
-                                    <img class="ratingImg" src="${arr[j].rating}" >
-                                </div>
-                            </div>
+                            <h3 class="proHeading">${arr[j].heading}</h3>
+                             <div class="visitBtnDiv">
+                              <button class="visitBtn" onclick="window.location='${arr[j].url}'">Visit</button>
+                             </div>
                         </div>
-                    </div>`;
+                    </div>
+                `;
+            } else if (i === 3) {
+                // Display content for About Me section
+                html = `<br><p>${arr[j].text}</p>`;
             } else {
+                // Display content for Education section
                 html = `
-                    <div id="demo${j}" class="card" style="background-image: url(${arr[j].bg});
-                      background-size: cover;
-                      background-position: center;
-                    ">
-                        <div class="shadowDiv">
-                            <h3>${arr[j].heading}</h3>
-                            <div>
-                                <p>Skill Rating</p>     
-                                <div class="ratingDiv">
-                                    <img class="ratingImg" src="${arr[j].rating}" >
-                                </div>
-                            </div>
-                        </div>
-                    </div>`;
+                <br>
+                    <div class="education-card">
+                        <h3>${arr[j].heading}</h3>
+                        <p>${arr[j].institution}</p>
+                        <p>${arr[j].year}</p><br>
+                        <p>${arr[j].description}</p>
+                    </div><br>
+                `;
             }
             innerHtml += html;
         }
@@ -155,6 +213,87 @@ function show(i) {
 window.onload = function() {
     show(1);
 };
-function profileClick() {
-  alert('hdhd')
+document.getElementById('contactDiv').style.display="none"
+
+function contact(){
+  document.getElementById('contentDiv').style.display="none"
+  document.getElementById('contactDiv').style.display="flex"
 }
+
+function content(){
+  document.getElementById('contentDiv').style.display="block"
+  document.getElementById('contactDiv').style.display="none"
+  
+}
+
+let instagram = document.getElementById('instagram');
+let youtube = document.getElementById('youtube');
+let github = document.getElementById('github');
+let mail = document.getElementById('mail');
+instagram.addEventListener('click',function(){
+    window.location="https://www.instagram.com/dhanushsaieditz/"
+});
+github.addEventListener('click',function(){
+    window.location="https://github.com/DhanushSaiCoder"
+});
+youtube.addEventListener('click',function(){
+    window.location="https://youtube.com/@dhanushsaieditz3009?si=90-Nq-8s1bgvy_nP"
+});
+mail.addEventListener('click',function(){
+    window.location="https://youtube.com/@dhanushsaieditz3009?si=90-Nq-8s1bgvy_nP"
+});
+
+document.getElementById("mail").addEventListener("click", function() {
+    // Text to be copied
+    const textToCopy = "dhanushsai1467@gmail.com";
+
+    // Create a temporary input element
+    const tempInput = document.createElement("input");
+    tempInput.value = textToCopy;
+    
+    // Add the input element to the document body
+    document.body.appendChild(tempInput);
+    
+    // Select the text inside the input element
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999); // For mobile devices
+    
+    // Execute the copy command
+    document.execCommand("copy");
+    
+    // Remove the temporary input element
+    document.body.removeChild(tempInput);
+
+    // Optionally, you can alert the user that the text has been copied
+});
+
+document.getElementById("mail").addEventListener("click", function() {
+    // Text to be copied
+    const textToCopy = "dhanushsai1467@gmail.com";
+
+    // Create a temporary input element
+    const tempInput = document.createElement("input");
+    tempInput.value = textToCopy;
+
+    // Add the input element to the document body
+    document.body.appendChild(tempInput);
+
+    // Select the text inside the input element
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999); // For mobile devices
+
+    // Execute the copy command
+    document.execCommand("copy");
+
+    // Remove the temporary input element
+    document.body.removeChild(tempInput);
+
+    // Display the "Mail Copied!" message
+    const copiedMessage = document.getElementById("copiedMessage");
+    copiedMessage.style.opacity = 1; // Make the message visible
+
+    // Hide the message after 3 seconds
+    setTimeout(function() {
+        copiedMessage.style.opacity = 0;
+    }, 3000); // Adjust this time as needed
+});
