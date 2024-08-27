@@ -239,11 +239,9 @@ github.addEventListener('click',function(){
 youtube.addEventListener('click',function(){
     window.location="https://youtube.com/@dhanushsaieditz3009?si=90-Nq-8s1bgvy_nP"
 });
-mail.addEventListener('click',function(){
-    window.location="https://youtube.com/@dhanushsaieditz3009?si=90-Nq-8s1bgvy_nP"
-});
 
-document.getElementById("mail").addEventListener("click", function() {
+
+/*document.getElementById("mail").addEventListener("click", function() {
     // Text to be copied
     const textToCopy = "dhanushsai1467@gmail.com";
 
@@ -265,35 +263,23 @@ document.getElementById("mail").addEventListener("click", function() {
     document.body.removeChild(tempInput);
 
     // Optionally, you can alert the user that the text has been copied
-});
+    var message = document.getElementById('copied');
+    message.classList.add("show");
+    setTimeout(function() {
+message.classList.remove("show");
+}, 5000);
+});*/
 
 document.getElementById("mail").addEventListener("click", function() {
-    // Text to be copied
-    const textToCopy = "dhanushsai1467@gmail.com";
+            // Text to be copied
+            const textToCopy = "dhanushsai1467@gmail.com";
+            
+            // Using navigator.clipboard API
+            navigator.clipboard.writeText(textToCopy).then(function() {
+                console.log('Email copied to clipboard successfully!');
 
-    // Create a temporary input element
-    const tempInput = document.createElement("input");
-    tempInput.value = textToCopy;
-
-    // Add the input element to the document body
-    document.body.appendChild(tempInput);
-
-    // Select the text inside the input element
-    tempInput.select();
-    tempInput.setSelectionRange(0, 99999); // For mobile devices
-
-    // Execute the copy command
-    document.execCommand("copy");
-
-    // Remove the temporary input element
-    document.body.removeChild(tempInput);
-
-    // Display the "Mail Copied!" message
-    const copiedMessage = document.getElementById("copiedMessage");
-    copiedMessage.style.opacity = 1; // Make the message visible
-
-    // Hide the message after 3 seconds
-    setTimeout(function() {
-        copiedMessage.style.opacity = 0;
-    }, 3000); // Adjust this time as needed
-});
+                document.getElementById('copied').innerText='Copied'
+                // Show the copied message
+                
+            });
+        });
