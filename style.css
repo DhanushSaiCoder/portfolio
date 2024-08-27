@@ -117,18 +117,21 @@ body {
 .sectionsBtnsDiv {
     padding-top: 20px;
     padding-bottom: 10px;
-    width: 100vw;
+    width: auto;
     height: auto;
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
     padding: 20px 10px;
     background-size: cover;
     background-position: center;
     position: sticky;
     top: 0;
-    z-index: 10; /* Ensure it stays on top */
+    z-index: 10;
+    overflow-x: auto; /* Corrected this line */
+    overflow-y: auto;
+    white-space: nowrap;
 }
 
 .sectionsBtns {
@@ -406,7 +409,6 @@ body {
 }
 .greyBtn{
   margin:10px;
-  margin-top: none;
   margin-bottom:10px;
   
-        }
+                           }
