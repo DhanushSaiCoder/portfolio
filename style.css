@@ -132,6 +132,13 @@ body {
     overflow-x: auto; /* Corrected this line */
     overflow-y: auto;
     white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    
+}
+.sectionsBtnsDiv::-webkit-scrollbar {
+    display: none;
 }
 
 .sectionsBtns {
