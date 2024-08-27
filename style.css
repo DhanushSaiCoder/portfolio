@@ -419,3 +419,9 @@ body {
   margin-bottom:10px;
   
                            }
+#copied{
+  opacity: .61;
+  font-size: small;
+  
+  transition: 1s ease-in-out;
+}
